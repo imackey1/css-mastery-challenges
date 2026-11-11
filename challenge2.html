@@ -1,81 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenge 2: I Heart NY T-Shirt</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #e9eef5;
-            padding: 20px;
-        }
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>I Heart NY T-Shirt</title>
+      <style>
 
-        /* Container div: positioned parent (anchor for the absolute text) + background color */
-        #container {
+         /* Container div: positioned relative, with a background color.
+            inline-block keeps the colored box snug around the shirt. */
+         div {
             position: relative;
-            width: 440px;
-            padding: 20px;
-            margin: 20px auto;
+            display: inline-block;
             background-color: #7fa8d6;
-        }
+         }
 
-        /* Relative positioning: shirt is nudged 10px right of where it would normally sit.
-           z-index only works because the image is positioned (relative). */
-        img {
+         /* Relative positioning: shirt sits 10px to the right of its default location.
+            z-index only works because the image is positioned (relative). */
+         img {
             position: relative;
             left: 10px;
             z-index: 1;
-            display: block;
-            width: 400px;
-            height: auto;
-            border: 8px solid #ffffff;
+
+            /* Black border */
+            border: 10px solid black;
+
+            /* Space between the border and the image */
             padding: 10px;
-            margin: 0;
-            background-color: #ffffff;
-            box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.45);
-        }
 
-        /* Shared look for the words: sit above the shirt (z-index higher than the image) */
-        .words {
+            /* Space around the image */
+            margin: 20px;
+
+            background-color: #eef3fa;
+            box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.5);
+         }
+
+         .words {
+            font-family: impact;
+            font-size: 60px;
+         }
+
+         .first {
             position: absolute;
             z-index: 10;
-            font-family: "Rockwell", "Courier New", Georgia, serif;
-            font-weight: bold;
-            font-size: 88px;
-            line-height: 1;
-            color: #000000;
-        }
+            top: 190px;
+            left: 205px;
+         }
 
-        .first {
-            top: 152px;
-            left: 178px;
-        }
-
-        .heart {
+         .heart {
+            color: red;
+            font-size: 80px;
             position: absolute;
             z-index: 10;
-            top: 140px;
-            left: 263px;
-            font-size: 100px;
-            line-height: 1;
-            color: #e8112d;
-        }
+            top: 170px;
+            left: 240px;
+         }
 
-        .last {
-            top: 237px;
-            left: 176px;
-        }
-    </style>
-</head>
-<body>
-    <div id="container">
-        <span class="first words">I</span>
-        <span class="heart">&hearts;</span>
-        <span class="last words">NY</span>
-        <div>
-            <img src="tshirt.svg" alt="T-Shirt">
-        </div>
-    </div>
-</body>
+         .last {
+            position: absolute;
+            z-index: 10;
+            top: 255px;
+            left: 205px;
+         }
+
+      </style>
+   </head>
+   <body>
+      <span class="first words">I</span>
+
+      <span class="heart">&hearts;</span>
+
+      <span class="last words">NY</span>
+
+      <div>
+         <img src="tshirt.png" alt="White t-shirt">
+      </div>
+   </body>
 </html>

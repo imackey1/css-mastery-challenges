@@ -17,15 +17,15 @@ Two CSS exercises: a keyframe animation and a z-index / positioning layout.
 
 ## Challenge 2: I (heart) NY T-Shirt
 - The `img` uses `position: relative` to sit 10px to the right of its default spot.
-- `.first`, `.heart` and `.last` use `position: absolute` inside a positioned container, with `z-index` placing them above the shirt.
-- Finishing touches: border and padding frame, `box-shadow` on the shirt, and a background color on the container.
+- `.first`, `.heart` and `.last` use `position: absolute` with a higher `z-index` than the shirt, so the text sits on top of it. The container `div` is `position: relative`.
+- Finishing touches: black border, padding and margin frame on the image, `box-shadow`, and a background color on the container `div`.
 
 ## Files
 | File | Purpose |
 |------|---------|
 | `challenge1.html` | Animation challenge (embedded stylesheet) |
 | `challenge2.html` | Positioning and z-index challenge (embedded stylesheet) |
-| `tshirt.svg` | Plain white t-shirt image used by challenge 2 |
+| `tshirt.png` | Plain white t-shirt image used by challenge 2 |
 
 ## Run locally
-Open either HTML file in a modern browser. Keep `tshirt.svg` in the same folder as `challenge2.html`.
+Open either HTML file in a modern browser. Keep `tshirt.png` in the same folder as `challenge2.html`.
