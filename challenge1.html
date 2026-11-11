@@ -1,69 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Challenge 1: Animating the Answer</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1e2a3a;
-            color: #ffffff;
-            padding: 40px 20px;
-            overflow-x: hidden;
-        }
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <title>Question and Answer</title>
+      <style>
 
-        #equation {
-            font-size: 2.2em;
-            white-space: nowrap;
-        }
+         body {
+            font-family: Calibri, sans-serif;
+            font-size: 3em;
+         }
 
-        /* Hover effect on the question (my choice: highlight + slight grow) */
-        #question {
-            display: inline-block;
-            padding: 6px 12px;
-            border-radius: 8px;
+         #answer {
+            color: black;
+            width: 100px;
+
+            animation-name: moveFraction;
+            animation-duration: 3s;
+            animation-delay: 1s;
+            animation-timing-function: ease-in-out;
+            animation-fill-mode: both;
+
+         }
+
+         @keyframes moveFraction {
+            0% {
+               color: yellow;
+               transform: translate(-355px, 60px);
+            }
+
+            50% {
+               transform: translate(0px, 60px);
+            }
+
+            100% {
+               color: red;
+               transform: translate(0px, 0px);
+            }
+         }
+
+
+         #question {
+            padding: 0 10px;
+            border-radius: 10px;
             transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-        }
 
-        #question:hover {
+         }
+
+         #question:hover {
             background-color: #f5a623;
             color: #1e2a3a;
             transform: scale(1.05);
-        }
 
-        /* The fraction must be inline-block so transform applies to it */
-        #answer {
+         }
+
+         span {
             display: inline-block;
-            font-weight: bold;
-            animation-name: moveFraction;
-            animation-duration: 3s;
-            animation-delay: 1s;              /* starts 1 second after CSS loads */
-            animation-timing-function: ease-in-out;
-            animation-fill-mode: both;        /* holds the 0% state during the delay and the 100% state after */
-        }
+         }
 
-        @keyframes moveFraction {
-            0% {
-                color: yellow;
-                transform: translate(-355px, 60px);   /* off to the left, below the line */
-            }
-            50% {
-                transform: translate(0px, 60px);      /* just below and right of the question */
-            }
-            100% {
-                color: red;
-                transform: translate(0px, 0px);       /* next to the = sign */
-            }
-        }
-    </style>
-</head>
-<body>
-    <h1>Animating the Answer</h1>
-    <p id="equation">
-        <span id="question">What is 1/2 + 1/4?</span>
-        <span id="equals">=</span>
-        <span id="answer">3/4</span>
-    </p>
-</body>
+      </style>
+   </head>
+   <body>
+      <span id="question">Question: &frac14; + &frac12; =</span>
+      <span id="answer">&frac34;</span>
+   </body>
 </html>
